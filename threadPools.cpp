@@ -97,13 +97,14 @@ void ThreadPool::enqueue(function<void()> task) {
 int main() {
     ThreadPool pool(3);  // 3 worker threads
 
-    for (int i = 1; i <= 10; ++i) {
+    for (int i = 1; i <= 15; ++i) {
         pool.enqueue([i]() {
-            std::cout << "Task " << i << " is running on thread " 
-                      << std::this_thread::get_id() << "\n";
-            std::this_thread::sleep_for(std::chrono::milliseconds(500));
+            std::cout << "Task " << i << " is running on thread " << std::this_thread::get_id() << "\n";
+            std::this_thread::sleep_for(std::chrono::seconds(2));
         });
     }
+    cout<<"All tasks have been enqueued.\n";
+    std::this_thread::sleep_for(std::chrono::seconds(5)); 
 
     // ThreadPool destructor will automatically wait for all tasks
     return 0;
