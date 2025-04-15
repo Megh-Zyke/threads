@@ -1,0 +1,5 @@
+[2025-04-15 16:47:49] Server started on port 1234
+[2025-04-15 16:48:28] Server started on port 12345
+[2025-04-15 16:48:32] Client connected from 127.0.0.1
+[2025-04-15 16:48:35] Received: hey there
+[2025-04-15 16:48:35] Echoed message back to client
